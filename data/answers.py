@@ -11,4 +11,4 @@ class Answer(SqlAlchemyBase, SerializerMixin):
     task_id = sqlalchemy.Column(sqlalchemy.Integer, sqlalchemy.ForeignKey('tasks.id'))
     right = sqlalchemy.Column(sqlalchemy.Integer)
     answer = sqlalchemy.Column(sqlalchemy.String)
-    task = orm.relation('Task', back_populates="answers")
+    task = orm.relationship('Task', back_populates="answers")

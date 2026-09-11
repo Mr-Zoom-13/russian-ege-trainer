@@ -1,6 +1,11 @@
-SQLAlchemy~=1.4.39
-Werkzeug~=2.2.2
-WTForms~=3.0.1
-matplotlib~=3.5.1
-Flask~=2.2.2
-waitress~=2.1.2
+Flask==2.2.5
+Flask-Admin==1.6.1
+Flask-Login==0.6.3
+Flask-WTF==1.1.1
+email-validator==2.3.0
+matplotlib==3.8.4
+SQLAlchemy==1.4.54
+SQLAlchemy-serializer==1.4.1
+Waitress==2.1.2
+Werkzeug==2.2.3
+WTForms==3.0.1

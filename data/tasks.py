@@ -11,6 +11,6 @@ class Task(SqlAlchemyBase, SerializerMixin):
     subtheme_id = sqlalchemy.Column(sqlalchemy.Integer, sqlalchemy.ForeignKey('subthemes.id'))
     task = sqlalchemy.Column(sqlalchemy.String)
     type_task = sqlalchemy.Column(sqlalchemy.Integer)
-    subtheme = orm.relation('Subtheme', back_populates="tasks")
+    subtheme = orm.relationship('Subtheme', back_populates="tasks")
     answers = orm.relationship('Answer', back_populates="task")
 

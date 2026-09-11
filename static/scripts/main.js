@@ -72,7 +72,7 @@ $(document).ready(function () {
     function start_testing(this_) {
         test_id = $(this_).attr('data-test-id')
         subtheme_id = $(this_).attr('data-subtheme-id')
-        fetch('/api/start-test/' + user_id + '/' + test_id + '/' + subtheme_id)
+        fetch('/api/start-test/' + user_id + '/' + test_id + '/' + subtheme_id, {method: 'POST'})
             .then((response) => {
                 return response.json();
             })
@@ -85,7 +85,7 @@ $(document).ready(function () {
     function check_right_answer(this_) {
         answer = $(this_).attr('data-symbol')
 
-        fetch(`/api/next-task/${user_id}/${task_pos}/${answer}`)
+        fetch(`/api/next-task/${user_id}/${task_pos}/${answer}`, {method: 'POST'})
             .then((response) => {
                 return response.json();
             })

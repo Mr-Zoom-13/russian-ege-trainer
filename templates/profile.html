@@ -2,7 +2,7 @@
 {% block content %}
 <div class="manage_icon">
     <a href="/profile/{{ id }}"><div class="profile"></div></a>
-    {% if id == 1 %}
+    {% if is_admin %}
         <a href="/making-tests"><div class="making-tests"></div></a>
         <a href="/admin"><div class="settings"></div></a>
     {% endif %}
@@ -17,12 +17,12 @@
         <input class="form-control btn btn-success btn_next d-inline-block m-left" type="submit" value="Изменить">
     </div>
 </form>
-<h1 class="h1_title">Статистика(за этот месяц)</h1>
+<h1 class="h1_title">Статистика за этот месяц</h1>
 <div class="text-center">
     {% if no_stat is defined %}
         <h2 class="h1_title">К сожалению, за этот месяц вы не прошли ни одного теста! :(</h2>
     {% else %}
-        <img src="/static/img/1.png" alt="Статистика">
+        <img src="data:image/png;base64,{{ chart_data }}" alt="Статистика за месяц">
     {% endif %}
 </div>
 <h1 class="h1_title">История</h1>

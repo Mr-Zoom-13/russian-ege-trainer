@@ -2,7 +2,7 @@
 {% block content%}
 <div class="manage_icon">
     <a href="/profile/{{ id }}"><div class="profile"></div></a>
-    {% if id == 1 %}
+    {% if is_admin %}
         <a href="/making-tests"><div class="making-tests"></div></a>
         <a href="/admin"><div class="settings"></div></a>
     {% endif %}

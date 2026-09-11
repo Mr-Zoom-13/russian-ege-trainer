@@ -159,7 +159,7 @@ $(document).ready(function () {
     function create_theme() {
         title = $('#input_theme_title').val()
         $('#input_theme_title').val('')
-        fetch('/api/create-theme/' + title)
+        fetch('/api/create-theme/' + encodeURIComponent(title), {method: 'POST'})
             .then((response) => {
                 return response.json();
             })
@@ -180,7 +180,7 @@ $(document).ready(function () {
         description = $('#input_subtheme_description').val()
         $('#input_subtheme_title').val('')
         $('#input_subtheme_description').val('')
-        fetch(`/api/create-subtheme/${test_id}/${title}/${description}`)
+        fetch(`/api/create-subtheme/${test_id}/${encodeURIComponent(title)}/${encodeURIComponent(description)}`, {method: 'POST'})
             .then((response) => {
                 return response.json();
             })
@@ -210,7 +210,7 @@ $(document).ready(function () {
         }
         if (right == -2) {
             answers = queue_answers.join('|')
-            fetch(`/api/create-task/${subtheme_id}/${task}/${type_task}/${answers}`)
+            fetch(`/api/create-task/${subtheme_id}/${encodeURIComponent(task)}/${type_task}/${encodeURIComponent(answers)}`, {method: 'POST'})
                 .then((response) => {
                     return response.json();
                 })
@@ -223,7 +223,7 @@ $(document).ready(function () {
                 });
         } else {
             if (right != -1) {
-                fetch(`/api/create-task/${subtheme_id}/${task}/${type_task}/${right}`)
+                fetch(`/api/create-task/${subtheme_id}/${encodeURIComponent(task)}/${type_task}/${right}`, {method: 'POST'})
                     .then((response) => {
                         return response.json();
                     })
